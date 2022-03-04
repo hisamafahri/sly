@@ -25,4 +25,7 @@ func Execute() {
 func init() {
 	// add the 'version' or 'v' command
 	rootCmd.AddCommand(versionCmd)
+
+	// add the 'init' or 'i' command
+	rootCmd.AddCommand(initCmd)
 }
