@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
+	"github.com/hisamafahri/sly/helper"
 	"github.com/spf13/cobra"
 )
 
@@ -15,31 +16,7 @@ var initCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 
 		// create the sly.config.yml
-		err := ioutil.WriteFile("sly.config.yml", []byte(`# Make sure you have already configure a GPG key
-# that published in https://keys.openpgp.org/. If you haven't,
-# please read the docs first.
-
-# user's hierarchy groups to manage level of access for the protected files
-# the first group in the group list will be the DEFAULT GROUP
-groups:
-	# - dev:
-		# - .env.dev
-		# - folder/secret.txt
-	# - staging:
-		# - .env.stage
-		# - folder/another-secret.txt
-
-	# if you want a group to have all of the files that another group have just assign it with a 'group.' prefix. 
-	# example: '- group.anotherGroupName'.
-	# - prod:
-		# - group.staging
-		# - .env.prod
-
-# list of users and its incorporated group
-users:
-	# - user1@email.com: ['dev']
-	# - user2@email.com: ['dev', prod]
-`), 0755)
+		err := ioutil.WriteFile("sly.config.yml", []byte(helper.DefaultConfig), 0755)
 
 		if err != nil {
 			fmt.Printf("Unable to write file: %v", err)
