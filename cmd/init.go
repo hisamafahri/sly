@@ -20,23 +20,22 @@ var initCmd = &cobra.Command{
 # please read the docs first.
 
 # user's hierarchy groups to manage level of access for the protected files
+# the first group in the group list will be the DEFAULT GROUP
 groups:
-	# the first group in the group list will be the DEFAULT GROUP
-	- local:
-		- .env
-		- .env.local
-		- folder/secret.txt
-	- prod:
-		# if you want a group to have all of the files that another group have
-		# just assign it with a 'group.' prefix. Example: '- group.anotherGroupName'
-		- group.local
-		- .env.staging
-		- .env.prod
+	# - dev:
+		# - .env.dev
+		# - folder/secret.txt
 
-# list of users that have full/partial access to the protected files
+	# if you want a group to have all of the files that another group have just assign it with a 'group.' prefix. 
+	# example: '- group.anotherGroupName'.
+	# - prod:
+		# - group.local
+		# - .env.prod
+
+# list of users and its incorporated group
 users:
-	- user1@email.com: ['local']
-	- user2@email.com: ['local', prod]
+	# - user1@email.com: ['dev']
+	# - user2@email.com: ['dev', prod]
 `), 0755)
 
 		if err != nil {
