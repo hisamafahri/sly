@@ -28,4 +28,7 @@ func init() {
 
 	// add the 'init' or 'i' command
 	rootCmd.AddCommand(initCmd)
+
+	// add the 'encrypt' or 'e' command
+	rootCmd.AddCommand(encryptCmd)
 }
