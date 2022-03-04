@@ -1,7 +1,8 @@
 package main
 
-import "fmt"
+import "github.com/hisamafahri/sly/cmd"
 
 func main() {
-	fmt.Println("Hello, sly!")
+	// root command execution
+	cmd.Execute()
 }
