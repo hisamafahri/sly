@@ -10,9 +10,8 @@ import (
 
 // initCmd will initalize Sly app in the repo
 var initCmd = &cobra.Command{
-	Use:     "init",
-	Aliases: []string{"i"},
-	Short:   "Initialize sly",
+	Use:   "init",
+	Short: "Initialize sly",
 	Run: func(cmd *cobra.Command, args []string) {
 
 		// create the sly.config.yml
