@@ -6,6 +6,10 @@ var DefaultConfig = `---
 # that published in https://keys.openpgp.org/. If you haven't,
 # please read the docs first.
 
+# Key server for your gpg keys.
+# Re-publish ALL of your keys if you change your key server (not recommended).
+server: keys.openpgp.org
+
 # user's hierarchy groups to manage level of access for the protected files
 # the first group in the group list will be the DEFAULT GROUP
 groups:
